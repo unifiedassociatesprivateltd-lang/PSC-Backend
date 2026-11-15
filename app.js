@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 const corsOptions = {
-  origin: ['https://pscfrontend.netlify.app/'],
+  origin: 'https://pscfrontend.netlify.app/',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
 };
