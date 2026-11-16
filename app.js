@@ -7,8 +7,17 @@ import path from "path";
 dotenv.config();
 const app = express();
 app.use(express.json());
+const allowedOrigins = [
+  'https://pscfrontend.netlify.app',
+  'https://pscwbapplication.org',
+  'https://www.pscwbapplication.org',
+  // Optional: keep localhost if you test locally against this backend
+  // 'http://localhost:3000',
+  // 'http://localhost:5173',
+];
+
 const corsOptions = {
-  origin: 'https://pscfrontend.netlify.app',
+  origin: allowedOrigins,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
 };
